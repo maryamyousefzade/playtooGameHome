@@ -1,0 +1,123 @@
+//! width Classes
+.w-5 {
+  width: 5%;
+}
+.w-10 {
+  width: 10%;
+}
+.w-15 {
+  width: 15%;
+}
+.w-20 {
+  width: 20%;
+}
+.w-30 {
+  width: 30%;
+}
+.w-40 {
+  width: 40%;
+}
+.w-60 {
+  width: 60%;
+}
+.w-70 {
+  width: 70%;
+  margin: auto;
+}
+.w-80 {
+  width: 80%;
+  margin: auto;
+}
+.w-90 {
+  width: 90%;
+  margin: auto;
+}
+.w-95 {
+  width: 95%;
+  margin: auto;
+}
+
+// !height classes
+.min-h-6 {
+  min-height: 4rem;
+}
+//! flex Box Classes
+.flex-center {
+  @include centerizeTag();
+}
+.flex-between {
+  @include centerizeTag($justify: space-between);
+}
+.flex-end {
+  @include centerizeTag($justify: flex-end);
+}
+.flex-start {
+  @include centerizeTag($justify: flex-start);
+}
+//! positions Classes
+.position-center {
+  @include centerizePosition();
+}
+// !font Size Classes
+.fs-sm {
+  font-size: $fs-sm !important;
+}
+.fs-md {
+  font-size: $fs-md !important;
+}
+.fs-lg {
+  font-size: $fs-lg !important;
+}
+.fs-xlg {
+  font-size: $fs-xlg !important;
+}
+.fs-title {
+  font-size: $fs-title !important;
+}
+.fs-num {
+  font-size: $fs-num !important;
+}
+.fs-xsm {
+  font-size: $fs-xsm !important;
+}
+.fs-2xlg {
+  font-size: $fs-2xlg !important;
+}
+//! cursor Classes
+.pointer {
+  cursor: pointer;
+}
+.grab {
+  cursor: grab !important;
+}
+//! line classes
+.break-1 {
+  @include lineBreak(1);
+}
+.break-2 {
+  @include lineBreak();
+}
+.break-3 {
+  @include lineBreak(3);
+}
+.text-justify {
+  text-align: justify;
+}
+
+.tabletL-visible {
+  display: none !important;
+  @include responsive(tabletL) {
+    display: flex !important;
+  }
+}
+.tabletL-hidden {
+  @include responsive(tabletL) {
+    display: none !important;
+  }
+}
+.hidden {
+  visibility: hidden;
+}
+.fontRubik {
+  font-family: $fontRubik;
+}

@@ -1,0 +1,64 @@
+@mixin centerizeTag($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin centerizePosition() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin lineBreak($line: 2) {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+//* breakPoints
+// mobileS--->300px--->25em
+// mobile--->576px--->36em
+// tablet--->768px--->48em
+// tabletL--->992px--->62em
+// desktop--->1200px--->75em
+// desktopL--->1800px--->112.5 em
+
+@mixin responsive($breakpoint) {
+  //!  mobileS--->300px--->18.75em
+  @if $breakpoint == mobileS {
+    @media only screen and (min-width: 18.75em) {
+      @content;
+    }
+  }
+  //! mobile--->576px--->36em
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 36em) {
+      @content;
+    }
+  }
+  //! tablet--->768px--->48em
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 48em) {
+      @content;
+    }
+  }
+  //! tabletL--->992px--->62em
+  @if $breakpoint == tabletL {
+    @media only screen and (min-width: 62em) {
+      @content;
+    }
+  }
+  //! desktop--->1200px--->75em
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
+  //! desktopL--->1800px--->112.5 em
+  @if $breakpoint == desktopL {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

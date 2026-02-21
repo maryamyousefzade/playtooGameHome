@@ -1,0 +1,138 @@
+.best {
+  &__content {
+    &-navs {
+      display: none;
+      gap: 1rem;
+      & > svg {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      @include responsive(tablet) {
+        display: flex !important;
+      }
+    }
+    &-nav {
+      width: 4rem;
+      height: 4rem;
+      @include centerizeTag();
+      color: $colorWhite;
+      border-radius: 0.5rem;
+      font-size: $fs-md;
+      padding: 1.2rem;
+      cursor: pointer;
+
+      &.active {
+        background-color: $colorSecondry;
+      }
+    }
+    &-swiper {
+      @include responsive(tablet) {
+        display: none !important;
+      }
+    }
+    &-items {
+      @include centerizeTag();
+      gap: 4.5rem;
+      display: none;
+      @include responsive(tablet) {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr;
+        width: 100%;
+        gap: 2rem;
+      }
+    }
+
+    &-item {
+      margin-top: 4rem;
+      position: relative;
+      @include responsive(tablet) {
+        width: 100% !important;
+      }
+
+      &-img {
+        overflow: hidden;
+        border-radius: 2rem;
+        border: 0.4rem solid $colorWhite;
+        @include centerizeTag();
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+        width: 30rem;
+
+        @include responsive(tablet) {
+          width: 45rem !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 18rem;
+        }
+        &--4 {
+          @include responsive(tablet) {
+            position: relative;
+            top: 1.5rem;
+          }
+        }
+        & > img {
+          object-fit: cover;
+          transition: all 0.3s ease-in;
+          height: 30rem;
+          &:hover {
+            transform: scale(1.2);
+          }
+          @include responsive(mobile) {
+            width: 100% !important;
+            height: auto !important;
+          }
+          @include responsive(tablet) {
+            min-height: 18rem;
+          }
+        }
+      }
+      &-text {
+        color: $colorWhite;
+        margin-top: 1.5rem;
+        @include centerizeTag();
+        flex-direction: column;
+
+        &-name {
+          margin-bottom: 1rem;
+          cursor: default;
+        }
+        &-position {
+          display: block;
+          font-size: 1.3rem;
+          &::before {
+            content: "Your Position:";
+            color: $colorSub;
+            padding-right: 0.5rem;
+          }
+        }
+      }
+      &-number {
+        background: url(../../public/images/number.png) no-repeat;
+        background-size: 35rem;
+        width: 8rem;
+        height: 8rem;
+        display: inline-block;
+        position: absolute;
+        top: -5.8rem;
+        left: -1.6rem;
+        &--1 {
+          background-position: 1.5rem 0;
+        }
+        &--2 {
+          background-position: -3.5rem 0;
+        }
+        &--3 {
+          background-position: -11rem 0;
+        }
+        &--4 {
+          background-position: -19rem 0;
+        }
+        &--5 {
+          background-position: -27.5rem 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.sidebar {
+  display: none !important;
+  width: 20%;
+  height: 100%;
+  cursor: default;
+  border-radius: 0 1.5rem 1.5rem 0;
+  @include responsive(tabletL) {
+    display: flex !important;
+  }
+  &--mobile {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: -100rem;
+    transition: left 0.5s ease;
+    z-index: 20;
+    @include responsive(tabletL) {
+      display: none !important;
+    }
+  }
+  &__content {
+    &-filter {
+      width: 90%;
+      text-align: right;
+      border-radius: 0 0.5rem 0.5rem 0;
+      & > span {
+        @media only screen and (min-width: 72.5em) {
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+    &-nav {
+      & > li {
+        @include centerizeTag(flex-start);
+        padding: 25px 0px 0 25px;
+        font-size: 14px;
+        opacity: 0.6;
+        transition: all 0.3s ease-in;
+        cursor: pointer;
+        &:hover {
+          color: $colorWhite;
+          opacity: 1;
+        }
+      }
+      &-icon {
+        background: url(../../public/images/sidebar-slider.png) no-repeat;
+        width: 4rem;
+        height: 4.5rem;
+        background-size: cover;
+      }
+      &--1 {
+        background-position: -3.9rem 0;
+      }
+      &--2 {
+        background-position: 0 0;
+      }
+      &--3 {
+        background-position: -14.4rem 0;
+      }
+      &--4 {
+        background-position: -7.2rem 0;
+      }
+      &--5 {
+        background-position: -10.5rem 0;
+      }
+    }
+    &-friends {
+      &-img {
+        & > img {
+          width: 3.5rem;
+          object-fit: cover;
+        }
+      }
+      &-name {
+        transition: all 0.2s ease-in;
+        &:hover {
+          text-shadow: 0 0 0.2rem $colorSecondry;
+        }
+      }
+      &-icons {
+        width: 4rem;
+        height: 4rem;
+      }
+      &-wifi {
+        color: $colorFilter;
+        justify-content: flex-end;
+      }
+      &-online {
+        width: 1rem;
+        height: 1rem;
+        background-color: green;
+      }
+    }
+    &-league {
+      overflow: hidden;
+      transition: all ease-in 0.2s;
+
+      &-pic {
+        object-fit: cover;
+        width: 100%;
+      }
+      &:hover {
+        border: 1px solid $colorSecondry;
+        padding: 0.3rem;
+        cursor: pointer;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.5rem 0 $colorTertiary;
+      }
+    }
+  }
+}
+.sidebar--mobile.is-open {
+  left: 0;
+}

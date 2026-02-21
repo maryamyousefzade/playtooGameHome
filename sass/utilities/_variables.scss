@@ -1,0 +1,56 @@
+//! Bootstrap Color Overrides
+//! mainColors
+$colorPrimary: #202938;
+$colorSecondry: #0761dc;
+$colorTertiary: #ff04ab;
+//! otherColors
+$colorBg: #111a23;
+$colorWhite: #ffff;
+$colorBlack: #000;
+$colorSub: #7a7a7a;
+$colorFilter: #4c5564;
+$colorGreen: #3a9627;
+$colorSecondryLight: #3f86e6;
+$colorRed: #9b061c;
+$colorDarkRed: #610412;
+$colorTertiaryDark: #bf1686;
+$colorSecondryDark: #0751b9;
+$colorBoxShadow: #4215a6;
+//! color Maps
+$theme-colors: (
+  "colorPrimary": $colorPrimary,
+  "colorSecondry": $colorSecondry,
+  "colorTertiary": $colorTertiary,
+  "colorBg": $colorBg,
+  "colorWhite": $colorWhite,
+  "colorBlack": $colorBlack,
+  "colorSub": $colorSub,
+  "colorFilter": $colorFilter,
+  "colorGreen": $colorGreen,
+  "colorSecondryLight": $colorSecondryLight,
+  "colorRed": $colorRed,
+  "colorDarkRed": $colorDarkRed,
+  "colorTertiaryDark": $colorTertiaryDark,
+  "colorSecondryDark": $colorSecondryDark,
+  "colorBoxShadow": $colorBoxShadow,
+);
+// !override Font Size
+$fs-xsm: 0.8rem;
+$fs-sm: 1.1rem;
+$fs-md: 1.2rem;
+$fs-lg: 1.3rem;
+$fs-xlg: 1.6rem;
+$fs-2xlg: 1.8rem;
+$fs-title: 3.5rem;
+$fs-num: 2.6rem;
+//* fontSize
+$fontSizeDefault: 16px;
+$fontSizeTitle: 25px;
+$fontSizeSm: 11px;
+$fontSizeLg: 21px;
+//* fontFamily
+$fontSans: "DM Sans", serif;
+$fontPoppins: "Poppins", serif;
+$fontRubik: "Rubik", serif;
+//*width
+$mainWidth: 80%;

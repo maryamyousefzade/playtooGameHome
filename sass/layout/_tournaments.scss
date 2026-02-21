@@ -1,0 +1,367 @@
+.tournaments {
+  &__content {
+    &-title {
+      justify-content: center;
+      @include responsive(tabletL) {
+        justify-content: flex-start !important;
+        padding-left: 1.5rem !important;
+      }
+    }
+    &-columns {
+      @include responsive(tabletL) {
+        flex-direction: row !important;
+        @include centerizeTag(space-between, flex-start);
+
+        gap: 1rem;
+      }
+    }
+  }
+
+  &__left {
+    margin: 2;
+    @include responsive(tabletL) {
+      width: 60% !important;
+      margin-top: 0 !important;
+      height: 95rem !important;
+      justify-content: flex-start;
+    }
+  }
+  //! tournaments Left Column , Final Battle Styles
+  &__battle {
+    @include responsive(tabletL) {
+      height: 100rem;
+    }
+    &-topthree {
+      margin-left: 1.5rem !important;
+      &-heading {
+        & > span {
+          display: inline-block;
+        }
+      }
+
+      &__right {
+        margin-top: 2rem;
+        width: 34%;
+        background-color: $colorPrimary;
+      }
+    }
+    //! tournaments Left Column , Teams List Styles
+    &-list {
+      &-title {
+        & > span {
+          background-color: $colorSecondry;
+          color: $colorWhite;
+          border-radius: 0.5rem;
+          width: 15rem;
+          height: 3rem;
+          @include centerizeTag();
+          cursor: default;
+        }
+      }
+      &-items {
+        & > li {
+          @include centerizeTag(space-between);
+          padding: 1.3rem 1rem;
+          font-size: $fontSizeSm;
+          gap: 0.3rem;
+          background-color: $colorBg;
+          border-radius: 0.5rem;
+          margin-top: 0.8rem;
+          transition: all 0.2s ease-in;
+          cursor: pointer;
+          &:hover {
+            background-color: $colorRed;
+            & .tournaments__battle-list-number,
+            .tournaments__battle-list-rate {
+              background-color: $colorDarkRed;
+            }
+          }
+        }
+        & > li.active {
+          background-color: $colorRed;
+        }
+      }
+      &-number,
+      &-rate {
+        color: $colorWhite;
+        background-color: $colorPrimary;
+        border-radius: 0.5rem;
+        @include centerizeTag();
+        height: 100%;
+        width: 2.2rem;
+        height: 2.2rem;
+        &.active {
+          background-color: $colorDarkRed;
+        }
+      }
+      &-avatar,
+      &-coin {
+        color: $colorWhite;
+        width: 1.5rem;
+        object-fit: cover;
+      }
+      &-name {
+        color: $colorWhite;
+      }
+
+      &-points {
+        color: $colorWhite;
+      }
+    }
+    //! tournaments Left Column , Final Battle , two team battle Styles
+    &-toptwo {
+      &-content {
+        background-color: $colorPrimary;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        @include responsive(tabletL) {
+        }
+
+        &-img {
+          width: 9rem;
+        }
+        &-texts {
+          @include responsive(tabletL) {
+          }
+          overflow-x: auto;
+          overscroll-behavior: contain;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          @media only screen and (min-width: 88em) {
+            overflow-x: hidden !important;
+          }
+        }
+        &-text {
+          width: 70rem;
+          @include centerizeTag(flex-start);
+          font-size: 1rem;
+          margin-left: 0.5rem;
+          gap: 5.5rem;
+          padding: 2rem;
+        }
+        &-name {
+          @include centerizeTag();
+          flex-direction: column;
+        }
+        &-time {
+          @include centerizeTag();
+          flex-direction: column;
+          position: relative;
+          &::before {
+            content: "";
+            width: 0.2rem;
+            background-color: $colorSub;
+            transform: rotate(20deg);
+            height: 8rem;
+            position: absolute;
+            left: -2.5rem;
+            opacity: 0.2;
+          }
+        }
+        &-date {
+          @include centerizeTag();
+          flex-direction: column;
+          position: relative;
+          &::before {
+            content: "";
+            width: 0.2rem;
+            background-color: $colorSub;
+            transform: rotate(20deg);
+            height: 8rem;
+            position: absolute;
+            left: -2.5rem;
+            opacity: 0.2;
+          }
+        }
+        &-expiration {
+          @include centerizeTag();
+          flex-direction: column;
+          position: relative;
+          &::before {
+            content: " ";
+            width: 0.2rem;
+            background-color: $colorSub;
+            transform: rotate(20deg);
+            height: 8rem;
+            position: absolute;
+            left: -2.5rem;
+            opacity: 0.2;
+          }
+        }
+        &-key {
+          color: $colorWhite;
+        }
+        &-value {
+          color: $colorSub;
+          font-size: $fontSizeSm;
+          margin-top: 1rem;
+        }
+        &-percent {
+          @include centerizeTag();
+          font-family: $fontRubik;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: $colorTertiary;
+          width: 16rem;
+          height: 100%;
+          clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+          background: linear-gradient(
+            115deg,
+            $colorTertiaryDark 0,
+            $colorTertiaryDark 30%,
+            $colorTertiary 30%,
+            $colorTertiary 100%
+          );
+          &--2 {
+            width: 13rem;
+            background: linear-gradient(
+              110deg,
+              $colorSecondryDark 0,
+              $colorSecondryDark 30%,
+              $colorSecondry 30%,
+              $colorSecondry 100%
+            );
+          }
+          & > span {
+            color: $colorWhite;
+            font-weight: bold;
+            font-size: $fontSizeLg;
+          }
+          &:hover {
+            transform: translateX(5px);
+            cursor: pointer;
+          }
+          transition: all 0.2s ease-in;
+        }
+      }
+      &-more {
+        width: 100%;
+        @include centerizeTag();
+        background-color: $colorSecondry;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        padding: 2rem 1rem;
+        & > span {
+          color: $colorWhite;
+          font-size: $fontSizeDefault;
+          text-transform: capitalize;
+        }
+        &:hover {
+          opacity: 0.9;
+          transform: scale(1.02);
+        }
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+      }
+    }
+  }
+  //! tournaments Right Column , Closing Tournaments Styles
+  &__right {
+    background-color: $colorPrimary;
+    border-radius: 1.5rem;
+    width: 34%;
+    padding-bottom: 1.5rem;
+    margin-top: 2rem;
+    @include responsive(tabletL) {
+      width: 50% !important;
+      margin-top: 0 !important;
+      height: 95rem !important;
+    }
+
+    &-title {
+      & > h2 {
+        text-transform: uppercase;
+
+        margin-bottom: 0.5rem;
+        cursor: default;
+      }
+      & > span {
+        font-size: 1.3rem;
+        color: $colorGreen;
+        font-weight: bold;
+        text-transform: capitalize;
+        letter-spacing: 0.1rem;
+        cursor: default;
+      }
+    }
+    &-teams {
+      @include centerizeTag();
+      gap: 1rem;
+      &-name {
+        color: $colorWhite;
+        font-size: $fontSizeTitle;
+      }
+      &-scores {
+        color: $colorWhite;
+        font-weight: bold;
+        font-family: $fontRubik;
+        font-size: $fontSizeTitle;
+        letter-spacing: 0.2rem;
+        margin: 0 3rem;
+        cursor: default;
+      }
+    }
+    &-progressbar--1 {
+      width: 90%;
+      background: linear-gradient(
+        to right,
+        rgb(158, 137, 20),
+        gold 50%,
+        rgb(202, 194, 147) 70%
+      );
+      border-radius: 1.5rem;
+      height: 100%;
+      color: black;
+      @include centerizeTag();
+      font-size: $fontSizeSm;
+    }
+    &-progressbar--2 {
+      width: 85%;
+      background: linear-gradient(
+        to right,
+        rgb(158, 137, 20),
+        gold 50%,
+        rgb(202, 194, 147) 70%
+      );
+      border-radius: 1.5rem;
+      height: 100%;
+      color: black;
+      @include centerizeTag();
+      font-size: $fontSizeSm;
+    }
+    &-btn {
+      width: 100%;
+      @include centerizeTag();
+      margin: 2rem 0;
+      border-radius: 5px;
+      padding: 1.5rem 0;
+      background: linear-gradient(
+        to right,
+        rgb(216, 206, 149),
+        rgb(192, 167, 28),
+        rgb(216, 206, 149)
+      );
+      transition: all 0.5s ease-in;
+      cursor: pointer;
+      & > a {
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      &:hover {
+        letter-spacing: 0.2rem;
+        background: linear-gradient(
+          to right,
+          rgb(224, 220, 198),
+          rgb(230, 217, 144),
+          rgb(233, 231, 220)
+        );
+      }
+    }
+  }
+}

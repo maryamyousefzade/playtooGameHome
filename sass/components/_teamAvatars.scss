@@ -1,0 +1,124 @@
+.team__avatars {
+  @include centerizeTag(space-between);
+  padding: 2.5rem 1rem;
+
+  &--1 {
+    @include centerizeTag();
+    flex-direction: column;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &--pinkbg {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: conic-gradient(red 25%, $colorTertiary 0);
+    @include centerizeTag();
+    box-shadow: 0 0 1.5rem #4215a6;
+  }
+  &--redgra {
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      #710909,
+      rgb(185, 32, 32) 50%,
+      rgb(19, 11, 11) 100%
+    );
+    @include centerizeTag();
+    & > img {
+      width: 5.5rem;
+      object-fit: cover;
+    }
+  }
+  &--sword {
+    & > img {
+      width: 2rem;
+      object-fit: cover;
+    }
+  }
+  &--2 {
+    @include centerizeTag();
+    flex-direction: column;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &--bluebg {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: conic-gradient(red 45%, $colorSecondry 0);
+    @include centerizeTag();
+    box-shadow: 0 0 1.5rem #4215a6;
+  }
+  &--bluegra {
+    width: 7.4rem;
+    height: 7.4rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      #0a1639,
+      rgb(68, 87, 189) 50%,
+      rgb(9, 8, 28) 100%
+    );
+    @include centerizeTag();
+    & > img {
+      width: 4rem;
+      object-fit: cover;
+    }
+  }
+  &--3 {
+    @include centerizeTag();
+    flex-direction: column;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &--navybg {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: conic-gradient(red 25%, navy 0);
+    @include centerizeTag();
+    box-shadow: 0 0 15px #4215a6;
+  }
+  &--yellowgra {
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      yellow,
+      rgb(204, 154, 58) 50%,
+      rgb(19, 11, 11) 100%
+    );
+    @include centerizeTag();
+    & > img {
+      width: 2rem;
+      object-fit: cover;
+    }
+  }
+  &-text {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+
+    &-name {
+      font-size: 14px;
+      color: $colorWhite;
+    }
+    & > span {
+      font-size: $fontSizeSm;
+      color: $colorSub;
+    }
+  }
+}

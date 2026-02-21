@@ -1,0 +1,12 @@
+.main {
+  @include responsive(tabletL) {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  &__section {
+    @include responsive(tabletL) {
+      width: 80% !important;
+    }
+  }
+}

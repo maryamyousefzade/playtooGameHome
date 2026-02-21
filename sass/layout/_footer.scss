@@ -1,0 +1,78 @@
+.footer {
+  background-color: $colorPrimary;
+  font-family: $fontRubik;
+  font-weight: bold;
+  @include responsive(tablet) {
+    padding: 2rem;
+  }
+  &__content {
+    width: $mainWidth;
+    margin: 0 auto;
+    padding: 4rem 0;
+
+    @include centerizeTag(space-between);
+    @include responsive(tablet) {
+      flex-direction: row !important;
+    }
+
+    &-logo {
+      @include centerizeTag();
+      flex-direction: column;
+      color: $colorWhite;
+      &-img {
+        width: 15rem;
+      }
+      &-text {
+        margin-top: 1rem;
+        font-family: $fontRubik;
+        font-weight: bold;
+        cursor: default;
+      }
+    }
+    &-list {
+      ul {
+        gap: 1rem;
+        color: $colorSub;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+    &-social {
+      @include responsive(tablet) {
+        justify-content: center;
+        gap: 1rem;
+        width: auto !important;
+      }
+      &-item {
+        color: $colorWhite;
+        font-size: $fontSizeLg;
+        width: 6rem;
+        height: 6rem;
+        @include responsive(tablet) {
+          width: 4rem !important;
+          height: 4rem !important;
+        }
+        border-radius: 0.5rem;
+        background-color: $colorBg;
+        @include centerizeTag();
+        box-shadow: 0 0 0.5rem $colorSub;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        &:hover {
+          .footer__content-social-item-icon {
+            transform: rotateY(360deg);
+            color: $colorSecondry;
+          }
+          transform: translatey(-5px);
+        }
+        &-icon {
+          transition: all 0.3s ease-in;
+        }
+      }
+    }
+    &-copyright {
+      color: $colorSub;
+      cursor: default;
+    }
+  }
+}

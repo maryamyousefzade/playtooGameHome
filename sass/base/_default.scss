@@ -1,0 +1,46 @@
+html {
+  font-size: 62.5%;
+  //* 1rem=10px;
+  @include responsive(mobileS) {
+    font-size: 50%;
+  }
+  @include responsive(mobile) {
+    font-size: 53%;
+  }
+  @include responsive(tablet) {
+    font-size: 56%;
+  }
+  @include responsive(tabletL) {
+    font-size: 59%;
+  }
+  @include responsive(desktop) {
+    font-size: 62.5%;
+  }
+  @include responsive(desktopL) {
+    font-size: 66%;
+  }
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --bs-body-bg: #111a23;
+}
+body {
+  --bs-body-font-size: 1.2rem;
+  --bs-body-color: #101010;
+  --bs-body-font-family: $fontPoppins, "sans-serif";
+}
+body * :focus {
+  outline: none;
+  box-shadow: none;
+}
+body {
+  font-family: $fontPoppins;
+  background-color: $colorBg;
+}

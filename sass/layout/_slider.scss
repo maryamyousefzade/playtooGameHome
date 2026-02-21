@@ -1,0 +1,9 @@
+.slider {
+  &__content {
+    width: 100%;
+    overflow: hidden;
+    &-img {
+      object-fit: cover;
+    }
+  }
+}

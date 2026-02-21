@@ -1,0 +1,35 @@
+.section__title {
+  @include centerizeTag(space-between);
+  width: 100%;
+  margin-bottom: 1.5rem;
+  cursor: default;
+  @include responsive(tabletL) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  &-heading {
+    @include responsive(tabletL) {
+      width: 100% !important;
+    }
+  }
+  &-list {
+    @include centerizeTag();
+    color: $colorWhite;
+    gap: 2rem;
+    font-weight: bold;
+    @include responsive(tabletL) {
+      font-size: $fs-sm !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+    &-item {
+      padding: 1rem 0;
+      cursor: pointer;
+      &.active {
+        color: $colorSecondry;
+        border-top: solid 0.2rem $colorSecondry;
+      }
+    }
+  }
+}
